@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>المهندس طارق المليجي — مرشحكم لمقعد كهرباء رقم 15</title>
+    <meta
+      name="description"
+      content="الصفحة الرسمية للمهندس طارق المليجي، مرشح نقابة مهندسي القاهرة الفرعية على مقعد كهرباء رقم 15. المهندس يستحق الأفضل."
+    />
+
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- GSAP + ScrollTrigger -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo">
+          <span class="nav-logo-number">15</span>
+          <span class="nav-logo-text">م. طارق المليجي</span>
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-links">
+            <li><a href="#about">من هو؟</a></li>
+            <li><a href="#vision">الرؤية</a></li>
+            <li><a href="#program">البرنامج</a></li>
+            <li><a href="#why">لماذا طارق؟</a></li>
+            <li><a href="#stats">أرقام</a></li>
+            <li><a href="#timeline">المسيرة</a></li>
+          </ul>
+          <a href="#election-day" class="nav-cta">انتخب 15</a>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ========== SECTION 1: HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="hero-particles" id="heroParticles"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-flag-stripe"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-label">مقعد كهرباء</span>
+          <span class="hero-badge-number">15</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="hero-title-prefix">المهندس</span>
+          <span class="hero-title-name">طارق المليجي</span>
+        </h1>
+        <p class="hero-subtitle">مرشح نقابة مهندسي القاهرة الفرعية</p>
+        <div class="hero-slogan" id="heroSlogan">
+          <span class="slogan-text"></span>
+          <span class="slogan-cursor">|</span>
+        </div>
+        <div class="hero-date">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          <span>موعدنا الجمعة 27/2/2026</span>
+        </div>
+        <a href="#election-day" class="hero-btn">
+          <span>انتخب رقم 15</span>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </a>
+      </div>
+      <div class="hero-scroll-indicator">
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 2: ABOUT ========== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">تعرف عليه</span>
+          <h2 class="section-title">من هو طارق المليجي ؟</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="about-grid">
+          <div class="about-image">
+            <div class="about-image-frame">
+              <img
+                src="candidate.png"
+                alt="المهندس طارق المليجي"
+                loading="lazy"
+              />
+              <div class="about-image-badge">
+                <span>رقم</span>
+                <strong>15</strong>
+              </div>
+            </div>
+          </div>
+          <div class="about-credentials">
+            <div class="credential-card" data-index="1">
+              <div class="credential-icon">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5" />
+                </svg>
+              </div>
+              <div class="credential-text">
+                <h3>مرشح نقابة مهندسي القاهرة</h3>
+                <p>على مقعد كهرباء رقم 15</p>
+              </div>
+            </div>
+            <div class="credential-card" data-index="2">
+              <div class="credential-icon">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <div class="credential-text">
+                <h3>عضو لجنة الطاقة</h3>
+                <p>بالنقابة العامة للمهندسين</p>
+              </div>
+            </div>
+            <div class="credential-card" data-index="3">
+              <div class="credential-icon">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                  />
+                </svg>
+              </div>
+              <div class="credential-text">
+                <h3>عضو إتحاد المهندسين العرب</h3>
+                <p>ممثلاً لمهندسي مصر</p>
+              </div>
+            </div>
+            <div class="credential-card" data-index="4">
+              <div class="credential-icon">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div class="credential-text">
+                <h3>عضو جمعية المهندسين المصرية</h3>
+                <p>عضو فاعل ومشارك</p>
+              </div>
+            </div>
+            <div class="credential-card" data-index="5">
+              <div class="credential-icon">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="7" width="20" height="14" rx="2" />
+                  <path d="M16 7V5a4 4 0 0 0-8 0v2" />
+                  <line x1="12" y1="11" x2="12" y2="15" />
+                </svg>
+              </div>
+              <div class="credential-text">
+                <h3>مدير إدارة</h3>
+                <p>بشركة جنوب القاهرة لتوزيع الكهرباء</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 3: VISION ========== -->
+    <section class="section vision" id="vision">
+      <div class="container">
+        <div class="vision-wrapper">
+          <div class="vision-flag-bar"></div>
+          <div class="vision-content">
+            <div class="section-header">
+              <span class="section-tag">رؤيتنا</span>
+              <h2 class="section-title">الرؤية والأهداف</h2>
+              <div class="section-line"></div>
+            </div>
+            <div class="vision-quote">
+              <svg
+                class="vision-quote-mark"
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                opacity="0.15"
+              >
+                <path
+                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                />
+              </svg>
+              <blockquote>
+                نسعى لبناء نقابة فرعية قوية تخدم المهندس وتحقق طموحاته. نقابة
+                تقدم خدمات حقيقية ملموسة وتوفر فرص تدريب وتطوير مستمر، وتفتح
+                أبواب الاستثمار لتأمين مستقبل كل مهندس. لأن المهندس يستحق
+                الأفضل.
+              </blockquote>
+            </div>
+            <div class="vision-pillars">
+              <div class="pillar">
+                <div class="pillar-icon">🎯</div>
+                <h3>خدمة المهندس</h3>
+                <p>تقديم خدمات ملموسة تلمس حياة كل مهندس وأسرته</p>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon">📈</div>
+                <h3>تنمية الموارد</h3>
+                <p>استثمار أصول النقابة لزيادة العوائد وتحسين المعاشات</p>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon">🤝</div>
+                <h3>شراكات فاعلة</h3>
+                <p>بناء بروتوكولات تعاون مع القطاع الخاص لصالح المهندسين</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 4: PROGRAM ========== -->
+    <section class="section program" id="program">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">خطة العمل</span>
+          <h2 class="section-title">البرنامج الإنتخابي</h2>
+          <div class="section-line"></div>
+          <p class="section-desc">
+            برنامج شامل ومتكامل يهدف لتحقيق مصالح المهندسين وتطوير خدمات النقابة
+          </p>
+        </div>
+
+        <!-- Category: Financial -->
+        <div class="program-category">
+          <h3 class="program-category-title">
+            <span class="category-icon">💰</span>
+            الجانب المالي والاستثماري
+          </h3>
+          <div class="program-grid">
+            <div class="program-card">
+              <div class="program-card-number">01</div>
+              <div class="program-card-check">✓</div>
+              <h4>تحصيل الدمغة الهندسية</h4>
+              <p>
+                تحصيل قيمة الدمغة الهندسية كاملة لزيادة موارد النقابة وزيادة
+                المعاش الشهري لمهندسي المعاشات
+              </p>
+            </div>
+            <div class="program-card">
+              <div class="program-card-number">02</div>
+              <div class="program-card-check">✓</div>
+              <h4>استثمار أصول النقابة</h4>
+              <p>
+                الاستثمار في الأصول التي تقوم النقابة الفرعية بالإشراف عليها بما
+                يفتح قنوات تنمية موارد أكثر لصندوق المعاشات
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Training & Employment -->
+        <div class="program-category">
+          <h3 class="program-category-title">
+            <span class="category-icon">🎓</span>
+            التدريب والتوظيف
+          </h3>
+          <div class="program-grid">
+            <div class="program-card">
+              <div class="program-card-number">03</div>
+              <div class="program-card-check">✓</div>
+              <h4>دورات تدريبية مجانية</h4>
+              <p>
+                التدريب هو أهم الأولويات — تخصيص دورات مجانية يقوم بها أعلى
+                أساتذة وخبرات في مصر وتتحمل النقابة التكلفة أو تغطيتها من خلال
+                رعاة رسميين
+              </p>
+            </div>
+            <div class="program-card">
+              <div class="program-card-number">04</div>
+              <div class="program-card-check">✓</div>
+              <h4>فرص عمل لحديثي التخرج</h4>
+              <p>
+                التنسيق مع شركات القطاع الخاص لتوفير فرص عمل للمهندسين حديثي
+                التخرج
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Health & Services -->
+        <div class="program-category">
+          <h3 class="program-category-title">
+            <span class="category-icon">🏥</span>
+            الخدمات الصحية والمعيشية
+          </h3>
+          <div class="program-grid">
+            <div class="program-card">
+              <div class="program-card-number">05</div>
+              <div class="program-card-check">✓</div>
+              <h4>خصومات طبية</h4>
+              <p>
+                التنسيق مع المستشفيات الكبرى ومعامل التحاليل ومراكز الأشعة
+                للتعاقد بنسبة خصم للمهندس وأسرته
+              </p>
+            </div>
+            <div class="program-card">
+              <div class="program-card-number">06</div>
+              <div class="program-card-check">✓</div>
+              <h4>خدمات السيارات</h4>
+              <p>
+                عمل بروتوكول تعاون مع بعض مراكز خدمة السيارات بنسبة خصم مغرية
+                خاصة للمهندس
+              </p>
+            </div>
+            <div class="program-card">
+              <div class="program-card-number">07</div>
+              <div class="program-card-check">✓</div>
+              <h4>خصومات تجارية</h4>
+              <p>
+                عمل بروتوكول تعاون مع بعض متاجر الملابس وتجار المفروشات والأجهزة
+                المنزلية بنسبة خصم مغرية خاصة للمهندس بموجب إظهار كارنيه النقابة
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Tourism -->
+        <div class="program-category">
+          <h3 class="program-category-title">
+            <span class="category-icon">✈️</span>
+            السياحة والترفيه
+          </h3>
+          <div class="program-grid">
+            <div class="program-card">
+              <div class="program-card-number">08</div>
+              <div class="program-card-check">✓</div>
+              <h4>رحلات عمرة مخفضة</h4>
+              <p>
+                عمل بروتوكول تعاون مع بعض شركات السياحة الدينية لتوفير رحلات
+                العمرة بنسبة خصم مميزة ومغرية
+              </p>
+            </div>
+            <div class="program-card">
+              <div class="program-card-number">09</div>
+              <div class="program-card-check">✓</div>
+              <h4>سياحة ترفيهية</h4>
+              <p>وأيضاً مع بعض شركات السياحة الترفيهية بنسبة خصم مميزة</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 5: WHY HIM ========== -->
+    <section class="section why-him" id="why">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">المميزات</span>
+          <h2 class="section-title">لماذا طارق المليجي ؟</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M12 15l-2 5 9-11h-5l2-5-9 11z" />
+              </svg>
+            </div>
+            <h3>خبرة عملية</h3>
+            <p>
+              سنوات طويلة في قطاع الكهرباء كمدير إدارة بشركة جنوب القاهرة لتوزيع
+              الكهرباء
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3>انتماء نقابي</h3>
+            <p>
+              عضو فاعل في النقابة العامة وإتحاد المهندسين العرب وجمعية المهندسين
+              المصرية
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+            <h3>برنامج شامل</h3>
+            <p>
+              برنامج انتخابي متكامل يغطي التدريب والتوظيف والصحة والخدمات
+              والسياحة
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </div>
+            <h3>خدمة المهندس</h3>
+            <p>رؤية واضحة تضع خدمة المهندس وأسرته في المقام الأول</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 6: STATS ========== -->
+    <section class="section stats" id="stats">
+      <div class="stats-bg"></div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">بالأرقام</span>
+          <h2 class="section-title">أرقام ومحطات</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" data-target="15">0</div>
+            <div class="stat-label">رقم المقعد</div>
+            <div class="stat-sublabel">مقعد كهرباء</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="9">0</div>
+            <div class="stat-label">بنود البرنامج</div>
+            <div class="stat-sublabel">خطة عمل متكاملة</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="4">0</div>
+            <div class="stat-label">عضويات نقابية</div>
+            <div class="stat-sublabel">محلية وعربية</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="5">0</div>
+            <div class="stat-label">محاور رئيسية</div>
+            <div class="stat-sublabel">مالية وتدريبية وخدمية</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 7: TIMELINE ========== -->
+    <section class="section timeline-section" id="timeline">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">المسيرة</span>
+          <h2 class="section-title">المسيرة المهنية</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-line"></div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">البداية</span>
+              <h3>التخرج والانطلاق</h3>
+              <p>
+                حصل على بكالوريوس الهندسة قسم كهرباء وبدأ مسيرته المهنية في قطاع
+                الكهرباء
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">المسيرة</span>
+              <h3>شركة جنوب القاهرة للكهرباء</h3>
+              <p>
+                ترقى حتى وصل إلى منصب مدير إدارة بشركة جنوب القاهرة لتوزيع
+                الكهرباء
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">العمل النقابي</span>
+              <h3>العضويات والانتماء</h3>
+              <p>
+                انضم لعضوية لجنة الطاقة بالنقابة العامة وإتحاد المهندسين العرب
+                وجمعية المهندسين المصرية
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2026</span>
+              <h3>الترشح لمقعد كهرباء رقم 15</h3>
+              <p>
+                يترشح على مقعد كهرباء رقم 15 بنقابة مهندسي القاهرة الفرعية
+                ببرنامج شامل لخدمة المهندسين
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 8: TESTIMONIALS ========== -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">آراء الزملاء</span>
+          <h2 class="section-title">شهادات وتأييدات</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p>
+              طارق المليجي مهندس يتميز بالكفاءة والإخلاص في عمله. برنامجه
+              الانتخابي يعكس فهماً عميقاً لاحتياجات المهندسين الحقيقية.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">م</div>
+              <div>
+                <strong>مهندس زميل</strong>
+                <span>قطاع الكهرباء</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p>
+              اهتمامه بالتدريب وتوفير فرص العمل لحديثي التخرج يدل على رؤية
+              مستقبلية واعية. نحتاج لأمثاله في النقابة.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">م</div>
+              <div>
+                <strong>مهندس حديث التخرج</strong>
+                <span>نقابة القاهرة</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p>
+              فكرة بروتوكولات التعاون مع المستشفيات والمتاجر فكرة ممتازة ستنعكس
+              إيجاباً على حياة كل مهندس وأسرته.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">م</div>
+              <div>
+                <strong>مهندسة زميلة</strong>
+                <span>عضو النقابة</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 9: ELECTION DAY CTA ========== -->
+    <section class="section election-day" id="election-day">
+      <div class="election-flag-top"></div>
+      <div class="container">
+        <div class="election-content">
+          <div class="section-header">
+            <span class="section-tag">لا تنسى</span>
+            <h2 class="section-title">موعد الانتخابات</h2>
+            <div class="section-line"></div>
+          </div>
+          <div class="election-date-display">
+            <div class="election-day-name">الجمعة</div>
+            <div class="election-date-big">27/2/2026</div>
+          </div>
+          <div class="countdown" id="countdown">
+            <div class="countdown-item">
+              <span class="countdown-number" id="countdown-days">00</span>
+              <span class="countdown-label">يوم</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="countdown-hours">00</span>
+              <span class="countdown-label">ساعة</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="countdown-minutes">00</span>
+              <span class="countdown-label">دقيقة</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="countdown-seconds">00</span>
+              <span class="countdown-label">ثانية</span>
+            </div>
+          </div>
+          <div class="election-badge-wrapper">
+            <div class="election-badge pulse">
+              <span class="election-badge-text">انتخب رقم</span>
+              <span class="election-badge-number">15</span>
+            </div>
+          </div>
+          <p class="election-slogan-big">المهندس يستحق الأفضل</p>
+        </div>
+      </div>
+      <div class="election-flag-bottom"></div>
+    </section>
+
+    <!-- ========== SECTION 10: CANDIDATE MESSAGE ========== -->
+    <section class="section candidate-message" id="message">
+      <div class="container">
+        <div class="message-card">
+          <div class="message-quote-mark">"</div>
+          <div class="section-header">
+            <span class="section-tag">رسالة</span>
+            <h2 class="section-title">كلمة المرشح</h2>
+            <div class="section-line"></div>
+          </div>
+          <blockquote class="message-text">
+            زملائي المهندسين الأعزاء، أتقدم إليكم ببرنامج انتخابي طموح وواقعي
+            يهدف لتحقيق مصالحكم وتطوير خدمات نقابتنا. أعدكم بالعمل الجاد والمخلص
+            لتحقيق كل بند من بنود هذا البرنامج. معاً نستطيع أن نبني نقابة فرعية
+            تليق بالمهندس المصري وتحقق طموحاته. أطلب منكم الثقة والتصويت لصالح
+            رقم 15 مقعد كهرباء يوم الجمعة 27 فبراير. المهندس يستحق الأفضل.
+          </blockquote>
+          <div class="message-signature">
+            <span>المهندس / طارق المليجي</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 11: FOOTER ========== -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="footer-seat">
+              <span class="footer-seat-number">15</span>
+              <span class="footer-seat-label">مقعد كهرباء</span>
+            </div>
+            <h3>المهندس / طارق المليجي</h3>
+            <p>مرشح نقابة مهندسي القاهرة الفرعية</p>
+          </div>
+          <div class="footer-links">
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="#about">من هو؟</a></li>
+              <li><a href="#program">البرنامج</a></li>
+              <li><a href="#election-day">موعد الانتخاب</a></li>
+            </ul>
+          </div>
+          <div class="footer-slogan">
+            <div class="footer-slogan-text">المهندس يستحق الأفضل</div>
+            <div class="footer-year">2026</div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-flag-stripe"></div>
+          <p>
+            © 2026 الحملة الانتخابية للمهندس طارق المليجي. جميع الحقوق محفوظة.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
