@@ -255,29 +255,68 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ============================================
-  // TIMELINE — Sequential Reveal
+  // TIMELINE — Premium Scroll Animations
   // ============================================
-  const timelineLine = document.querySelector(".timeline-line");
 
-  ScrollTrigger.create({
-    trigger: ".timeline",
-    start: "top 70%",
-    onEnter: () => timelineLine.classList.add("animated"),
-  });
+  // 1. Spine Progress Animation
+  // Animate the height of .timeline-progress as user scrolls through the section
+  const timelineSection = document.querySelector(".timeline");
+  const timelineProgress = document.querySelector(".timeline-progress");
 
-  gsap.utils.toArray(".timeline-item").forEach((item, i) => {
-    gsap.to(item, {
-      opacity: 1,
-      x: 0,
-      duration: 0.6,
-      delay: i * 0.2,
-      ease: "power2.out",
+  if (timelineSection && timelineProgress) {
+    gsap.to(timelineProgress, {
+      height: "100%",
+      ease: "none",
       scrollTrigger: {
-        trigger: item,
-        start: "top 85%",
-        toggleActions: "play none none none",
+        trigger: ".timeline",
+        start: "top center",
+        end: "bottom center",
+        scrub: 0.5,
       },
     });
+  }
+
+  // 2. 3D Card Reveal & Dot Activation
+  gsap.utils.toArray(".timeline-item").forEach((item, i) => {
+    const content = item.querySelector(".timeline-content");
+    const dot = item.querySelector(".timeline-dot");
+
+    // Animate Card (3D Flip In)
+    if (content) {
+      gsap.fromTo(
+        content,
+        {
+          opacity: 0,
+          y: 50,
+          rotationX: -15,
+          scale: 0.9,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotationX: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
+    }
+
+    // Animate Dot (Pop & Glow)
+    if (dot) {
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top center", // When item hits center
+        end: "bottom center",
+        onEnter: () => dot.classList.add("active"),
+        onLeaveBack: () => dot.classList.remove("active"),
+      });
+    }
   });
 
   // ============================================
@@ -321,6 +360,69 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".election-badge",
       start: "top 85%",
     },
+  });
+
+  // ============================================
+  // STATS — Count Up & Scale
+  // ============================================
+  gsap.utils.toArray(".stat-number").forEach((stat) => {
+    const target = +stat.getAttribute("data-target");
+    gsap.fromTo(
+      stat,
+      { innerHTML: 0, scale: 0.5, opacity: 0 },
+      {
+        innerHTML: target,
+        scale: 1,
+        opacity: 1,
+        duration: 2,
+        ease: "power3.out",
+        snap: { innerHTML: 1 },
+        scrollTrigger: {
+          trigger: stat,
+          start: "top 90%",
+          toggleActions: "play none none reverse",
+        },
+      },
+    );
+  });
+
+  // ============================================
+  // VISION — Pillars Stagger
+  // ============================================
+  gsap.to(".pillar", {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".vision-pillars",
+      start: "top 80%",
+    },
+  });
+
+  // ============================================
+  // PROGRAM — 3D Flip Entrance
+  // ============================================
+  gsap.set(".program-card", {
+    opacity: 0,
+    y: 50,
+    rotationX: 45,
+    transformPerspective: 1000,
+  });
+
+  ScrollTrigger.batch(".program-card", {
+    onEnter: (batch) =>
+      gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        rotationX: 0,
+        stagger: 0.15,
+        duration: 1,
+        ease: "back.out(1.2)",
+      }),
+    start: "top 85%",
+    once: true,
   });
 
   // ============================================
@@ -368,7 +470,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.from(".message-card", {
     opacity: 0,
     y: 40,
-    duration: 0.8,
+    duration: 0.6,
     ease: "power2.out",
     scrollTrigger: {
       trigger: ".message-card",
@@ -408,9 +510,9 @@ document.addEventListener("DOMContentLoaded", () => {
       particle.style.height = particle.style.width;
 
       if (Math.random() > 0.5) {
-        particle.style.background = "var(--clr-gold)";
+        particle.style.background = "var(--clr-primary)";
       } else {
-        particle.style.background = "var(--clr-red)";
+        particle.style.background = "var(--clr-primary-light)";
       }
 
       container.appendChild(particle);
@@ -466,4 +568,100 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: 1,
     },
   });
+
+  // ============================================
+  // 9. 3D Tilt Effects (Consolidated)
+  // ============================================
+  const applyTilt = (selector, intensity = 5) => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((el) => {
+      el.addEventListener("mousemove", (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -intensity;
+        const rotateY = ((x - centerX) / centerX) * intensity;
+
+        gsap.to(el, {
+          rotateX,
+          rotateY,
+          scale: intensity > 10 ? 1.02 : 1.01,
+          duration: 0.5,
+          ease: "power2.out",
+          overwrite: "auto",
+        });
+      });
+
+      el.addEventListener("mouseleave", () => {
+        gsap.to(el, {
+          rotateX: 0,
+          rotateY: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          overwrite: "auto",
+        });
+      });
+    });
+  };
+
+  // Regular tilt for standard cards
+  applyTilt(".bento-card, .stat-card, .why-card, .testimonial-card", 5);
+
+  // Premium strong tilt for Program cards
+  applyTilt(".program-card", 12);
+
+  // ============================================
+  // SECTION CONNECTORS — Scroll Reveal
+  // ============================================
+  gsap.utils.toArray(".section-connector").forEach((connector) => {
+    gsap.from(connector, {
+      opacity: 0,
+      scaleY: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: connector,
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+
+  // ============================================
+  // SECTION LINE — Width Animation on Scroll
+  // ============================================
+  gsap.utils.toArray(".section-line").forEach((line) => {
+    gsap.from(line, {
+      scaleX: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: line,
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+
+  // ============================================
+  // BACK TO TOP BUTTON
+  // ============================================
+  const backToTopBtn = document.getElementById("backToTop");
+
+  if (backToTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 });
