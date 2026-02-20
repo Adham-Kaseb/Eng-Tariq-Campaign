@@ -281,8 +281,8 @@ img {
 }
 
 .nav-cta {
-  background: var(--gradient-accent) !important;
-  color: #0f172a !important; /* Dark text for contrast on Amber */
+  background: var(--gradient-primary) !important;
+  color: var(--clr-white) !important;
   font-weight: 800 !important;
   padding: 10px 24px !important;
   border-radius: 50px !important;
@@ -290,7 +290,7 @@ img {
 }
 
 .nav-cta:hover {
-  box-shadow: 0 0 20px var(--clr-accent-glow);
+  box-shadow: 0 0 20px var(--clr-primary-glow);
   transform: translateY(-2px);
   filter: brightness(1.1);
 }
@@ -497,8 +497,8 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: var(--gradient-accent);
-  color: #0f172a;
+  background: var(--gradient-primary);
+  color: var(--clr-white);
   font-family: var(--font-main);
   font-size: 1.15rem;
   font-weight: 800;
@@ -507,12 +507,12 @@ img {
   border: none;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 10px 30px var(--clr-primary-glow);
 }
 
 .hero-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(245, 158, 11, 0.5);
+  box-shadow: 0 15px 40px var(--clr-primary-glow);
   filter: brightness(1.1);
 }
 
