@@ -25,13 +25,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Mobile toggle
   navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
+    navMenu.classList.toggle("active");
+    navToggle.classList.toggle("active");
+    const isOpen = navMenu.classList.contains("active");
+    navToggle.setAttribute(
+      "aria-label",
+      isOpen ? "إغلاق القائمة" : "فتح القائمة",
+    );
   });
 
   // Close mobile nav on link click
   navMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      navMenu.classList.remove("open");
+      navMenu.classList.remove("active");
+      navToggle.classList.remove("active");
+      navToggle.setAttribute("aria-label", "فتح القائمة");
     });
   });
 
